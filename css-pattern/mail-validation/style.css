@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  background-color: bisque;
+}
+.box {
+  background: #fff;
+  padding: 15px 40px;
+  box-shadow: 15px 15px rgba(255, 255, 255, 0.1);
+}
+.box h3 {
+  color: #ccc;
+  font-size: 20px;
+  position: relative;
+  letter-spacing: 1px;
+}

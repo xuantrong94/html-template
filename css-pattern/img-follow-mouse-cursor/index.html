@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image follow mouse cursor</title>
+    <style>
+        body {
+            transform-style: preserve-3d;
+            overflow-x: hidden;
+        }
+        .card {
+            transform: translateZ(0);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+        .card-content {
+            transform-style: preserve-3d;
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-content">
+        <img src="./branding-bg-1.png" alt="">
+      </div>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+      $(document).on("mousemove", (e) => {
+        var width = -$(window).innerWidth() / 2 - e.pageX / 20;
+        var height = -$(window).innerHeight() / 2 - e.pageY / 10;
+
+        $(".card").css(
+          "transform",
+          "rotateY(" + width + "deg)rotateX(" + height + "deg)"
+        );
+      });
+    </script>
+  </body>
+</html>
